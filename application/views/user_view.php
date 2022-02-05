@@ -24,10 +24,10 @@
 
      foreach($results as $result){
 
-       
         echo $result->id. ' ';
         echo $result->username. ' ';
         echo $result->password .'<hr><br>';
+        
      }
 
 ?>

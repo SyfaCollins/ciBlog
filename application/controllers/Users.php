@@ -3,7 +3,7 @@
 class Users extends CI_Controller{
 
 
-    public function show($user_id){
+    public function show(){
         
         //manual load of modes
         // $this->load-model('User_model');
@@ -12,35 +12,42 @@ class Users extends CI_Controller{
 
   
 
-       $data['results'] = $this->User_model->get_users($user_id);
+       $data['results'] = $this->User_model->get_users();
 
        //transfer  information into the user view
 
 
         $this->load->view('user_view', $data);
 
-       }
+    }
 
 
-       public function insert(){
+    public function insert(){
 
-        $username = 'peter';
-        $password = 'try123';
+    $username = 'peter';
+    $password = 'try123';
 
-        $this->User_model->create_user([ 'username' => $username,'password' => $password]);
+    $this->User_model->create_user([ 'username' => $username,'password' => $password]);
+
+    $data['message'] = 'successfully sent';
+    $this->load->view('success',$data);
 
 
-       }
+    }
 
        //this method pushes variables to the update_user() method in the models/User_model
 
 
        public function update(){
-        $id = 7;
+        $id = 20;
         $username = 'Will';
         $password = 'p556';
 
         $this->User_model->update_user([ 'username' => $username,'password' => $password], $id);
+
+        $data['message'] = 'successfully updated';
+    $this->load->view('success',$data);
+
         
 
        }

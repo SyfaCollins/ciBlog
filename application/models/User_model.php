@@ -4,9 +4,8 @@ class User_model extends CI_Model{
 
     //these methods  communicate directly to our database
 
-    public function get_users($user_id){
+    public function get_users(){
 
-        $this->db->where('id',$user_id);
 
         $query = $this->db->get('users');
 
