@@ -57,7 +57,7 @@ class Users extends CI_Controller{
 
            $this->User_model->delete_user($id);
        }
-
+ 
 
     }
 
